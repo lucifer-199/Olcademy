@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Queries{% endblock title %}
+{% block queryactive %} active {% endblock queryactive %}
+{% block body %}
+
+<div class="container my-3">
+<h2>Queries of Users:</h2>
+{% for q in allQueries %}
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <h3><strong class="d-inline-block mb-2 text-primary">Query By {{q.name}}</strong></h3>
+            <h5 class="mt-2 mb-auto">Email : {{q.email}}</h5>
+            <div class="mt-2 mb-auto"><h5>Subject: </h5> {{q.subject}}</div>
+            <p class="card-text mb-auto"> <h5>Message:</h5> {{q.message}}</p>
+            <p class="card-text mb-auto"> <h5>Query:</h5> {{q.query}}</p>
+            
+        </div>
+        <div class="col-auto d-none d-lg-block">
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+{% endblock body %}

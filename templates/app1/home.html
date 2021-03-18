@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block body %}
+
+{% if user.is_authenticated %}
+  <div class="container my-3">
+    <div class="jumbotron">
+        <h1 class="display-4 mx-4">Welcome  {{request.user}}</h1>
+        <a class="btn btn-primary btn-lg mx-4 mt-4" href="/queries" role="button">Go to Queries Page!</a>
+        
+    </div>
+  </div>
+{% else %}
+   <div class="container my-3">
+    <div class="jumbotron">
+        <h3 class="display-4 mt-2">Please Log In to see Queries of Users ! </h3>
+        <h3 class="display-4 mt-2">If you are not registered Feel free to Sign Up! </h3>      
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
